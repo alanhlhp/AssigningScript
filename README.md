@@ -1,6 +1,5 @@
 # AssigningScript
-Assigning Script
-This script is in charge of automate the assigning cases process
+This script is in charge of automating the Energy case assignment process
 :coffee:
 ## 
 Requirements:
