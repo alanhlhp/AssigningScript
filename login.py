@@ -2,3 +2,4 @@
 
 usrnm = 'userID'
 psswrd = 'password'
+queue = 'URL'
