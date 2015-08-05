@@ -28,4 +28,5 @@ driver.implicitly_wait(3) # 3 seconds
 driver.switch_to_frame("mycase")
 select_dropdown(driver, "allComm", "322555") # Selects the community
 select_dropdown(driver, "selIdProcessAjax", "1820234") # Selects the process
-select_dropdown(driver, "selStep", "1820246") #Selects the step >> NOT WORKING
+select_dropdown(driver, "selIdStepAjax", "1820246") #Selects the step
+driver.find_element_by_xpath("//a[contains(@href, 'fnSubmit')]").click() #clickbutton
