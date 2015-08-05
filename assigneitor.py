@@ -21,7 +21,7 @@ def select_dropdown(driver, dropdown_id, option_value):
 
 driver = webdriver.Ie() # Get local session of IE
 #driver = webdriver.Firefox() # Get local session of Firefox
-driver.get("http://supportcentral.ge.com/processmaps/ProcessQFrmSet.asp") # Load page
+driver.get(queue) # Load page
 time.sleep(0.2) # Let the page load
 #ssoLogin()
 driver.implicitly_wait(3) # 3 seconds
