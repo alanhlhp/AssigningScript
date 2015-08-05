@@ -5,6 +5,7 @@ from selenium import webdriver
 import time
 from login import *
 
+# This function will fill out the SSO Login Form
 def ssoLogin():
     username = driver.find_element_by_id("username")
     password = driver.find_element_by_id("password")
@@ -12,12 +13,19 @@ def ssoLogin():
     password.send_keys(psswrd)
     driver.find_element_by_name("submitFrm").click()
 
+# This function will find the desired dropdown and select the appropriate option 
+def select_dropdown(driver, dropdown_id, option_value):
+    dd = driver.find_element_by_name(dropdown_id)
+    xpath = ".//option[@value='{}']".format(option_value)
+    dd.find_element_by_xpath(xpath).click()
+
 driver = webdriver.Ie() # Get local session of IE
 #driver = webdriver.Firefox() # Get local session of Firefox
 driver.get("http://supportcentral.ge.com/processmaps/ProcessQFrmSet.asp") # Load page
 time.sleep(0.2) # Let the page load
-#ssoLogin() #this function fills the SSO login page with credentials provided on login.py (this needs fixing)
+#ssoLogin()
 driver.implicitly_wait(3) # 3 seconds
-driver.switch_to_frame("mycase") #switching to the correct frame to find the ID we need
-driver.find_element_by_link_text('SELECT BY COMMUNITY ID').click()
-comm = driver.find_element_by_id("commId").send_keys('322555')
+driver.switch_to_frame("mycase")
+select_dropdown(driver, "allComm", "322555") # Selects the community
+select_dropdown(driver, "selIdProcessAjax", "1820234") # Selects the process
+select_dropdown(driver, "selStep", "1820246") #Selects the step >> NOT WORKING
