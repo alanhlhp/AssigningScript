@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 import time
-from login import *
+from config import *
 
 # This function will fill out the SSO Login Form
 def ssoLogin():
