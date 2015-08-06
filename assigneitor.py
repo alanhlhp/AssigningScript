@@ -31,6 +31,12 @@ select_dropdown(driver, "selIdProcessAjax", "1820234") # Selects the process
 select_dropdown(driver, "selIdStepAjax", "1820246") #Selects the step
 driver.find_element_by_xpath("//a[contains(@href, 'fnSubmit')]").click() #clickbutton
 
+data = []
 table = driver.find_element_by_xpath("//table[@bgColor = '#dddddd']")
 rowCount = table.find_elements_by_xpath("//tbody/tr[@bgColor = '#ffffff']") #length of table
 print len(rowCount)
+#this cycle get all case numbers in a list
+for row in rowCount:
+    numCase = row.find_elements_by_xpath("//td[@class = 'reqId']")
+data.append([td.text for td in numCase])
+print data
