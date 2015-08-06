@@ -34,9 +34,15 @@ driver.find_element_by_xpath("//a[contains(@href, 'fnSubmit')]").click() #clickb
 data = []
 table = driver.find_element_by_xpath("//table[@bgColor = '#dddddd']")
 rowCount = table.find_elements_by_xpath("//tbody/tr[@bgColor = '#ffffff']") #length of table
-print len(rowCount)
-#this cycle get all case numbers in a list
+totalNumber = len(rowCount)
+#print totalNumber
+
+#this cycle gets all case numbers from the workflow
 for row in rowCount:
     numCase = row.find_elements_by_xpath("//td[@class = 'reqId']")
 data.append([td.text for td in numCase])
-print data
+#print data
+
+#this cycle goes through the whole list of cases
+for i in data:
+    print i
