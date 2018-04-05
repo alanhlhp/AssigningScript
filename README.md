@@ -1,8 +1,8 @@
 # AssigningScript
-This script is in charge of automating the Energy case assignment process
+Script in charge of automating the GE Energy case assignment process using web scraping.
 :coffee:
 ## 
 Requirements:
 > Python 2.7
-
 > pywin32 library
+> Selenium 2
